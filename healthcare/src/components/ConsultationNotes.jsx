@@ -41,11 +41,11 @@ export default function ConsultationNotes() {
         {success && <span className="text-green-600 ml-2">Note added!</span>}
       </form>
       {notes.length > 0 && (
-        <div className="mt-4">
-          <h4 className="text-lg font-semibold mb-2 text-green-700 dark:text-green-300">Consultation Notes</h4>
-          <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg">
+        <div className="mt-4 overflow-x-auto">
+          <h4 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-300">Consultation Notes</h4>
+          <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg min-w-[350px]">
             <thead>
-              <tr className="bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 dark:from-green-800 dark:via-blue-800 dark:to-purple-800 text-green-900 dark:text-green-100">
+              <tr className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-blue-800 dark:via-purple-800 dark:to-pink-800 text-blue-900 dark:text-blue-100">
                 <th className="px-3 py-2">Date & Time</th>
                 <th className="px-3 py-2">Description</th>
               </tr>
@@ -55,13 +55,13 @@ export default function ConsultationNotes() {
                 <tr
                   key={n.date + n.description}
                   className={
-                    (idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-green-50 dark:bg-green-900') +
-                    ' cursor-pointer hover:bg-green-100 dark:hover:bg-green-800 transition'
+                    (idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-blue-50 dark:bg-blue-900') +
+                    ' cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-800 transition'
                   }
                   onClick={() => setExpandedIdx(expandedIdx === idx ? null : idx)}
                 >
-                  <td className="px-3 py-2 text-gray-600 dark:text-gray-200 font-semibold">{n.date}</td>
-                  <td className="px-3 py-2 text-green-700 dark:text-green-300">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-200 font-semibold whitespace-nowrap">{n.date}</td>
+                  <td className="px-3 py-2 text-purple-700 dark:text-purple-300 break-words max-w-xs md:max-w-md">
                     {expandedIdx === idx
                       ? n.description
                       : n.description.length > 40

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function HealthRecords() {
   const { records } = useData();
-  // For demo, use patientId 'p1'
+ 
   const patientRecords = records.filter(r => r.patientId === 'p1');
   return (
     <div>
@@ -15,8 +15,8 @@ export default function HealthRecords() {
             className="p-6 border-2 rounded-xl bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 shadow-lg border-purple-200 dark:border-purple-700 relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.04, boxShadow: '0 4px 24px rgba(80,0,120,0.12)' }}
-            transition={{ duration: 0.4 }}
+            whileHover={{ scale: 1, boxShadow: 'rgba(80,0,120,0.12)' }}
+            transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-2">
               <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-tr from-blue-400 to-purple-400 flex items-center justify-center text-white text-lg font-bold shadow">
