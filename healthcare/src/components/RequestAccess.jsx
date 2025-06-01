@@ -13,21 +13,21 @@ export default function RequestAccess() {
   };
   return (
     <div>
-      <h3 className="text-xl font-semibold mb-2">Request Access to Restricted Records</h3>
+      <h3 className="text-xl font-semibold mb-2 text-green-700 dark:text-green-300">Request Access to Restricted Records</h3>
       <ul>
         {restricted.map(r => (
           <motion.li
             key={r.id}
-            className="mb-2 flex items-center justify-between"
+            className="mb-3 flex items-center justify-between bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 dark:from-green-900 dark:via-blue-900 dark:to-purple-900 rounded-xl px-4 py-3 shadow-md border border-green-200 dark:border-green-700"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
             whileHover={{ scale: 1.02 }}
           >
-            <span>{r.type} ({r.description})</span>
+            <span className="font-medium text-green-800 dark:text-green-200">{r.type} ({r.description})</span>
             <motion.button
               whileHover={{ scale: 1.08 }}
-              className="ml-4 px-2 py-1 bg-green-600 text-white rounded shadow"
+              className="ml-4 px-3 py-1 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-md font-semibold border-2 border-white dark:border-gray-900"
               onClick={handleRequest}
             >
               Request Access

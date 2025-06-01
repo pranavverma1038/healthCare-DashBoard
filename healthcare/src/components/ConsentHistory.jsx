@@ -6,12 +6,7 @@ export default function ConsentHistory() {
   // For demo, use patientId 'p1'
   const history = consentHistory.filter(c => c.patientId === 'p1');
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="overflow-x-auto"
-    >
+    <>
       <h3 className="text-xl font-semibold mb-2 text-purple-700 dark:text-purple-300">Consent History</h3>
       <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg">
         <thead>
@@ -35,6 +30,6 @@ export default function ConsentHistory() {
           ))}
         </tbody>
       </table>
-    </motion.div>
+    </>
   );
 } 

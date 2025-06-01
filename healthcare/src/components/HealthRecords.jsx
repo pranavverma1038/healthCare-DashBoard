@@ -19,7 +19,7 @@ export default function HealthRecords() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-2">
-              <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-tr from-blue-400 to-purple-400 flex items-center justify-center text-white text-lg font-bold shadow">
+              <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-tr from-blue-400 to-purple-400 flex text-center justify-center text-white text-lg font-bold shadow">
                 {record.type[0]}
               </span>
               <div className="font-bold text-blue-700 dark:text-blue-300 text-lg">{record.type}</div>
