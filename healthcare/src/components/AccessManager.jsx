@@ -1,9 +1,19 @@
 import { useData } from '../context/DataContext';
+import Notification from './Notification';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function AccessManager() {
   const { records } = useData();
- 
+  const [message,setMessage] = useState('')
+  const [messageTime, setMessageTime] = useState(false)
+
+  const handleSubmit  = (e)=>{
+      const mess = e.target.value
+      {mess === "Grant" ? setMessage(` GRANTED!`) : setMessage(`REVOKED!`)}
+      setMessageTime(true)
+      setTimeout(()=>{setMessageTime(false)},2000)
+  }
   const patientRecords = records.filter(r => r.patientId === 'p1' && r.restricted);
   return (
     <div>
@@ -16,18 +26,33 @@ export default function AccessManager() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1 }}
+            whileHover={{ scale: 1.04 }}
           >
             <span className="font-medium text-purple-800 dark:text-purple-200">{record.type}: {record.description}</span>
-            <motion.button
+            <div>
+            <button
+              value="Grant"
+              onClick={(e)=>handleSubmit(e)}
+              className="ml-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow font-semibold border-2 border-white dark:border-gray-900"
+            >
+            Grant
+            </button>
+            <button
+              value="Revoke"
+              onClick={(e)=>handleSubmit(e)}
               whileHover={{ scale: 1 }}
               className="ml-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow font-semibold border-2 border-white dark:border-gray-900"
             >
-              Grant/Revoke
-            </motion.button>
+            revoke
+            </button>
+            </div>
           </motion.li>
+          
         ))}
       </ul>
+      <Notification message="ACCESS IS" description={message} show={messageTime}></Notification>
     </div>
+    
   );
+  
 } 
