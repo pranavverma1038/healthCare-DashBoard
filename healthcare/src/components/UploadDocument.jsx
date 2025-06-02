@@ -29,7 +29,7 @@ export default function UploadDocument() {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-xl font-semibold mb-2">Upload New Health Document</h3>
-      <form onSubmit={handleUpload} className="flex gap-2 items-center mb-4">
+      <form onSubmit={handleUpload} className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center mb-4">
         <input type="file" onChange={e => setFile(e.target.files[0])} className="border p-1" />
         <button type="submit" className="px-3 py-1 bg-blue-600 text-white rounded">Upload</button>
         {success && <span className="text-green-600 ml-2">Uploaded!</span>}

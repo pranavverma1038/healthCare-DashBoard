@@ -29,7 +29,7 @@ export default function ConsultationNotes() {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-xl font-semibold mb-2">Add Consultation Notes</h3>
-      <form onSubmit={handleSubmit} className="flex gap-2 items-center mb-4">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center mb-4">
         <input
           type="text"
           value={note}
