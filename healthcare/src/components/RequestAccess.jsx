@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { useData } from '../context/DataContext';
 import { motion } from 'framer-motion';
+import Notification from './Notification';
 
 export default function RequestAccess() {
   const { records } = useData();
   const [success, setSuccess] = useState(false);
+  const [showNoti, setShowNoti] = useState('')
+  
  
   const restricted = records.filter(r => r.restricted);
-  const handleRequest = () => {
+  const handleRequest = (record) => {
     setSuccess(true);
+    setShowNoti(`Request Sent for: ${record.type} ${record.description}`)
     setTimeout(() => setSuccess(false), 2000);
   };
   return (
@@ -28,14 +32,15 @@ export default function RequestAccess() {
             <motion.button
               whileHover={{ scale: 1.08 }}
               className="ml-4 px-3 py-1 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-md font-semibold border-2 border-white dark:border-gray-900"
-              onClick={handleRequest}
+              onClick={()=>handleRequest(r)}
             >
               Request Access
             </motion.button>
           </motion.li>
         ))}
       </ul>
-      {success && <div className="text-green-600 mt-2">Request sent!</div>}
+      
+      <Notification message="Request Sent!" description={showNoti} show={success}/>
     </div>
   );
 } 
