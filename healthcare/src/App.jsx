@@ -42,13 +42,13 @@ function App() {
       <DataProvider>
         <div className={
           `min-h-screen w-full flex flex-col items-center justify-start py-8 px-2 transition-colors duration-500 ` +
-          (dark ? 'bg-black text-white' : 'bg-white text-black')
+          (dark ? 'bg-gray-800 text-white' : 'bg-white text-black')
         }>
           <DarkModeToggle dark={dark} setDark={setDark} />
           <div className={
             `w-full max-w-3xl rounded-2xl shadow-2xl p-8 border ` +
             (dark
-              ? 'bg-black/90 border-gray-800 text-white'
+              ? 'bg-gray-900 border-gray-700 text-white'
               : 'bg-white/90 border-purple-200 text-black')
           }>
             <h1 className={
