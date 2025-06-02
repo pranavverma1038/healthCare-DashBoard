@@ -37,32 +37,34 @@ export default function UploadDocument() {
       {uploads.length > 0 && (
         <div className="mt-4">
           <h4 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-300">Uploaded Files</h4>
-          <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg">
-            <thead>
-              <tr className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-blue-800 dark:via-purple-800 dark:to-pink-800 text-blue-900 dark:text-blue-100">
-                <th className="px-3 py-2">File Name</th>
-                <th className="px-3 py-2">Uploaded Date & Time</th>
-                <th className="px-3 py-2">Download</th>
-              </tr>
-            </thead>
-            <tbody>
-              {uploads.map((u, idx) => (
-                <tr key={u.name + u.date} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-blue-50 dark:bg-blue-900'}>
-                  <td className="px-3 py-2 font-semibold text-purple-700 dark:text-purple-300">{u.name}</td>
-                  <td className="px-3 py-2 text-gray-600 dark:text-gray-200">{u.date}</td>
-                  <td className="px-3 py-2">
-                    <a
-                      href={URL.createObjectURL(u.file)}
-                      download={u.name}
-                      className="px-3 py-1 bg-green-600 text-white rounded shadow hover:bg-green-700 transition"
-                    >
-                      Download
-                    </a>
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg">
+              <thead>
+                <tr className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-blue-800 dark:via-purple-800 dark:to-pink-800 text-blue-900 dark:text-blue-100">
+                  <th className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words">File Name</th>
+                  <th className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words">Uploaded Date & Time</th>
+                  <th className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words">Download</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {uploads.map((u, idx) => (
+                  <tr key={u.name + u.date} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-blue-50 dark:bg-blue-900'}>
+                    <td className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words font-semibold text-purple-700 dark:text-purple-300">{u.name}</td>
+                    <td className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words text-gray-600 dark:text-gray-200">{u.date}</td>
+                    <td className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words">
+                      <a
+                        href={URL.createObjectURL(u.file)}
+                        download={u.name}
+                        className="px-3 py-1 bg-green-600 text-white rounded shadow hover:bg-green-700 transition"
+                      >
+                        Download
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </motion.div>

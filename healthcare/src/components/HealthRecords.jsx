@@ -14,8 +14,8 @@ export default function HealthRecords() {
             key={record.id}
             className="p-6 border-2 rounded-xl bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 shadow-lg border-purple-200 dark:border-purple-700 relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1, boxShadow: 'rgba(80,0,120,0.12)' }}
+            animate={{ opacity: 1.04, y: 0 }}
+            whileHover={{ scale: 1.05, boxShadow: 'rgba(80,0,120,0.12)' }}
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-2">

@@ -43,11 +43,11 @@ export default function ConsultationNotes() {
       {notes.length > 0 && (
         <div className="mt-4 overflow-x-auto">
           <h4 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-300">Consultation Notes</h4>
-          <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg min-w-[350px]">
+          <table className="w-full text-left border-separate border-spacing-0 rounded-xl overflow-hidden shadow-lg">
             <thead>
               <tr className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-blue-800 dark:via-purple-800 dark:to-pink-800 text-blue-900 dark:text-blue-100">
-                <th className="px-3 py-2">Date & Time</th>
-                <th className="px-3 py-2">Description</th>
+                <th className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words">Date & Time</th>
+                <th className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words">Description</th>
               </tr>
             </thead>
             <tbody>
@@ -60,8 +60,8 @@ export default function ConsultationNotes() {
                   }
                   onClick={() => setExpandedIdx(expandedIdx === idx ? null : idx)}
                 >
-                  <td className="px-3 py-2 text-gray-600 dark:text-gray-200 font-semibold whitespace-nowrap">{n.date}</td>
-                  <td className="px-3 py-2 text-purple-700 dark:text-purple-300 break-words max-w-xs md:max-w-md">
+                  <td className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words text-gray-600 dark:text-gray-200 font-semibold whitespace-nowrap">{n.date}</td>
+                  <td className="px-1 py-1 text-xs sm:px-3 sm:py-2 sm:text-base whitespace-normal break-words text-purple-700 dark:text-purple-300 break-words max-w-xs md:max-w-md">
                     {expandedIdx === idx
                       ? n.description
                       : n.description.length > 40
