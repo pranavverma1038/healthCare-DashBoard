@@ -6,7 +6,7 @@ export const consentHistory = [
     recordId: 'r2',
     action: 'granted',
     timestamp: '2024-06-01T10:00:00Z',
-    reason: 'Routine checkup',
+    reason: 'Routine Checkup',
   },
   {
     id: 'c2',
@@ -24,6 +24,6 @@ export const consentHistory = [
     recordId: 'r1',
     action: 'revoked',
     timestamp: '2024-06-03T09:15:00Z',
-    reason: 'Consent withdrawn',
+    reason: 'Chest Pain',
   },
 ]; 
