@@ -1,8 +1,8 @@
 import AssignedPatients from './AssignedPatients';
 import RequestAccess from './RequestAccess';
-import ConsentHistory from './ConsentHistory';
 import ConsultationNotes from './ConsultationNotes';
 import { motion } from 'framer-motion';
+import DoctorConsentHistory from './DoctorConsentHistory';
 
 export default function DoctorDashboard() {
   return (
@@ -15,7 +15,7 @@ export default function DoctorDashboard() {
       <h2 className="text-2xl font-bold">Doctor Dashboard</h2>
       <AssignedPatients />
       <RequestAccess />
-      <ConsentHistory />
+      <DoctorConsentHistory />
       <ConsultationNotes />
     </motion.div>
   );

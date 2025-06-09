@@ -40,7 +40,6 @@ export default function AccessManager() {
             <button
               value="Revoke"
               onClick={(e)=>handleSubmit(e)}
-              whileHover={{ scale: 1 }}
               className="ml-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow font-semibold border-2 border-white dark:border-gray-900"
             >
             revoke
